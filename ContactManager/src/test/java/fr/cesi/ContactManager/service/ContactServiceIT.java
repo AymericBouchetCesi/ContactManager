@@ -18,13 +18,8 @@ public class ContactServiceIT {
 
     @Test
     public void testContactCreateNomNullFail() {
-//        assertThrows(Exception.class,
-//            ()->{
-//                Contact contact = new Contact(null,null,null);
-//            });
-//----//
         try {
-            Contact contact = new Contact(null,null,null);
+            new Contact(null,"bob","0640209940");
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -38,13 +33,12 @@ public class ContactServiceIT {
         } catch (Exception e) {
             System.out.println("ça a bien planté");
         }
-
     }
 
     @Test
     public void testContactCreateNomEmptyFail() {
         try {
-            Contact contact = new Contact("","bob","0640209940");
+            new Contact("","bob","0640209940");
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -63,7 +57,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreatePrenomNullFail() {
         try {
-            Contact contact = new Contact("boby",null,"0640209940");
+            new Contact("boby",null,"0640209940");
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -77,13 +71,12 @@ public class ContactServiceIT {
         } catch (Exception e) {
             System.out.println("ça a bien planté");
         }
-
     }
 
     @Test
     public void testContactCreatePrenomEmptyFail() {
         try {
-            Contact contact = new Contact("boby","","0640209940");
+            new Contact("boby","","0640209940");
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -102,7 +95,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreateTelephoneNullFail() {
         try {
-            Contact contact = new Contact("boby","bob",null);
+            new Contact("boby","bob",null);
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -121,7 +114,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreateTelephoneEmptyFail() {
         try {
-            Contact contact = new Contact("boby","bob","");
+            new Contact("boby","bob","");
             fail("ça aurait du planter a la ligne d'avant");
         } catch(Exception e) {
             System.out.println("ça a bien planté");
@@ -140,7 +133,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreateTelephoneWithMoreThan10Fail() {
         try {
-            Contact bob = new Contact("bob","bobo","06402099400");
+            new Contact("bob","bobo","06402099400");
             fail("ça aurait du planter a la ligne d'avant");
             //assertFalse(contactService.create(bob).getTelephone().length() > 10);
         } catch (Exception e) {
@@ -160,7 +153,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreateTelephoneWithMoreLess10Fail() {
         try {
-            Contact bob = new Contact("bob","bobo","064020994");
+            new Contact("bob","bobo","064020994");
             fail("ça aurait du planter a la ligne d'avant");
             //assertFalse(contactService.create(bob).getTelephone().length() < 10);
         } catch (Exception e) {
@@ -180,7 +173,7 @@ public class ContactServiceIT {
     @Test
     public void testContactCreateOk() {
         try {
-            Contact bob = new Contact("bob","bobo","0640209940");
+            new Contact("bob","bobo","0640209940");
         } catch (Exception e) {
             fail("ça n'aurait pas du planter");
         }
